@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Butterfly from "/components/Butterfly";
 
 export default function Home() {
   const picArray = ["/pic1.jpg", "/pic2.jpg", "/pic3.jpg"];
@@ -76,8 +77,8 @@ export default function Home() {
         <MdOutlineExpandCircleDown className="text-3xl font-bold mx-auto m-2 animate-bounce" />
       </main>
       <div className="min-h-screen bg-white flex justify-center items-center">
-        <div className="grid grid-cols-3 gap-4 min-h-screen">
-          <div className="flex flex-col justify-center h-screen gap-4 p-4">
+        <div className="flex items-center gap-4">
+          <div className="flex grow-0 flex-col justify-center gap-4 p-4 w-1/3">
             <h1 className="text-5xl font-thin">
               THE SEARCH FOR YOUR REAL NATURE <br />{" "}
               <span className="text-5xl font-bold">
@@ -97,7 +98,7 @@ export default function Home() {
               expectations.
             </p>
           </div>
-          <div className="flex items-center justify-center m-10 col-span-2">
+          <div className="flex w-2/3 items-center justify-center m-10">
             <Carousel
               opts={{
                 align: "start",
@@ -107,14 +108,14 @@ export default function Home() {
             >
               <CarouselContent className="flex">
                 {picArray.map((p, index) => (
-                  <CarouselItem key={index}>
+                  <CarouselItem key={index} className="object-contain ">
                     <Image
                       src={p}
                       alt="carousel"
-                      width={1000}
+                      width={1100}
                       height={600}
                       quality={100}
-                      className="object-contain"
+                      className="object-contain bg-cover bg-center"
                     />
                   </CarouselItem>
                 ))}
@@ -123,6 +124,26 @@ export default function Home() {
               <CarouselNext />
             </Carousel>
           </div>
+        </div>
+      </div>
+      <div className="min-h-screen bg-white flex justify-center items-center relative">
+        <div className="absolute animate-bounce left-20 z-40">
+          <Butterfly />
+        </div>
+        <div className="absolute top-10 left-32 z-40">
+          <Butterfly />
+        </div>
+        <div className="absolute bottom-10 left-32 z-40">
+          <Butterfly />
+        </div>
+        <div className="absolute bottom-10 right-32 z-40">
+          <Butterfly />
+        </div>
+        <div className="absolute top-10 right-32 z-40">
+          <Butterfly />
+        </div>
+        <div className="absolute right-20 z-40">
+          <Butterfly />
         </div>
       </div>
     </>
