@@ -1,7 +1,8 @@
 import { Playfair } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair({ subsets: ["latin"] });
+const playfair = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
