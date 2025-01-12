@@ -8,64 +8,15 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   },
 
   {
-    title: "WEDDING CAN COOLERS",
-    path: "/wedding-can-coolers",
-    image: "/public/images/can.png",
-    submenu: true,
-    images: true,
-    subMenuItems: [
-      {
-        title: "Premium Foam Wedding Can Coolers",
-        path: "/wedding-can-coolers/premium-foam-wedding-can-coolers",
-        image: "/images/cancooler/can1.jpg",
-      },
-      {
-        title: "Neoprene Wedding Can Coolers",
-        path: "/wedding-can-coolers/neoprene-wedding-can-coolers",
-        image: "/images/cancooler/can3.jpg",
-      },
-      {
-        title: "Premium Foam 12 oz Slim Wedding Can Coolers",
-        path: "/wedding-can-coolers/premium-foam-12-oz-slim-wedding-can-coolers",
-        image: "/images/cancooler/can2.jpg",
-      },
-      {
-        title: "Neoprene 12 oz Slim Wedding Can Coolers",
-        path: "/wedding-can-coolers/neoprene-12-oz-slim-wedding-can-coolers",
-        image: "/images/cancooler/can4.jpg",
-      },
-      { title: "View All", path: "/wedding-can-coolers" },
-    ],
+    title: "ABOUT",
+    path: "/about",
+    images: false,
   },
   {
-    title: "WEDDING PARTY CUPS",
+    title: "CONTACT US",
     path: "/wedding-party-cups",
     image: "/public/images/can.png",
-    images: true,
-    submenu: true,
-    subMenuItems: [
-      {
-        title: "12 oz Wedding Stadium Cups",
-        path: "/wedding-party-cups/12-oz-wedding-stadium-cups",
-        image: "/images/weddingcups/w8.jpg",
-      },
-      {
-        title: "16 oz Wedding Stadium Cups",
-        path: "/wedding-party-cups/16-oz-wedding-stadium-cups",
-        image: "/images/weddingcups/w9.jpg",
-      },
-      {
-        title: "22 oz Wedding Stadium Cups",
-        path: "/wedding-party-cups/22-oz-wedding-stadium-cups",
-        image: "/images/weddingcups/w10.jpg",
-      },
-      {
-        title: "32 oz Wedding Stadium Cups",
-        path: "/wedding-party-cups/32-oz-wedding-stadium-cups",
-        image: "/images/weddingcups/w11.jpg",
-      },
-      { title: "View All", path: "/wedding-party-cups" },
-    ],
+    images: false,
   },
   {
     title: "WEDDING SHOT GLASSES",

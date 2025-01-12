@@ -26,10 +26,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-20 text-white shadow-xl ${
+        className={`fixed top-0 left-0 right-0 z-[999] text-white shadow-xl ${
           navbarChange
             ? "bg-[#1C1678] text-black animate-in fade-in-10"
-            : "animate-out fade-out-10 "
+            : "animate-out fade-out-20 "
         }`}
       >
         <div className="container flex justify-between items-center relative z-10">
@@ -43,32 +43,38 @@ export default function Navbar() {
           />
           <span
             onClick={() => setOpen(!open)}
-            className="cursor-pointer flex md:hidden text-2xl"
+            className="cursor-pointer flex md:hidden text-2xl z-20"
           >
             <IoMenu />
           </span>
           <ul
-            className={`md:flex flex-col md:flex-row md:relative absolute z-0 inset-0 gap-6 text-lg  text-white  ${
-              open ? " mt-20  animate-in slide-in-from-top-20 " : "hidden"
+            className={`flex flex-col md:flex-row md:relative fixed inset-x-0 z-0 left-0 gap-6 text-lg ${
+              navbarChange
+                ? "bg-[#1C1678] md:bg-transparent"
+                : "bg-black md:bg-transparent"
+            } text-white  ${
+              open
+                ? " translate-y-40 animate-in slide-in-from-top-40"
+                : "-translate-y-40 md:translate-y-0"
             } `}
           >
             <li className="p-2 hover:border-b cursor-pointer">
               <Link href={"/"}>HOME</Link>
             </li>
             <li className="p-2 hover:border-b  cursor-pointer">
-              <Link className="mb-4" href={"/"}>
+              <Link className="mb-4" href={"#about"}>
                 ABOUT
               </Link>
             </li>
             <li className="p-2 hover:border-b cursor-pointer ">
-              <Link href={"/"}>CONTACT US</Link>
+              <Link href={"#contact"}>CONTACT US</Link>
             </li>
             <li className="p-2 hover:border-b cursor-pointer ">
-              <Link href={"/"} className="uppercase">
+              <Link href={"#services"} className="uppercase">
                 Services
               </Link>
             </li>
-            <li className="p-2 hover:border-b cursor-pointer border-white">
+            {/* <li className="p-2 hover:border-b cursor-pointer border-white">
               <Link href={"/"} className="uppercase">
                 Pre-Checkin
               </Link>
@@ -77,7 +83,7 @@ export default function Navbar() {
               <Link href={"/"} className="uppercase">
                 Book Now
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
