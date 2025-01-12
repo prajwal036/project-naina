@@ -1,6 +1,6 @@
 import Image from "next/image";
-import BackgroundImg from "../public/bg1.jpg";
-import Restaurant from "../public/restaurant.jpg";
+import BackgroundImg from "/public/img/img1.jpeg";
+import Restaurant from "../public/img/img9.jpeg";
 import RoomOne from "../public/room1.jpg";
 import RoomTwo from "../public/room2.jpg";
 import RoomThree from "../public/room3.jpg";
@@ -31,16 +31,15 @@ import Butterfly from "/components/Butterfly";
 import { Button } from "../components/ui/button";
 
 export default function Home() {
-  const picArray = ["/pic1.jpg", "/pic2.jpg", "/pic3.jpg"];
+  const picArray = ["/img/img2.jpeg", "/img/img3.jpeg", "/img/img4.jpeg"];
   return (
     <>
-      <Navbar />
       <main className="flex h-screen justify-between flex-col bg-gray-600 text-white relative">
         <Image
           src={BackgroundImg}
-          width={1280}
+          width={1080}
           height={800}
-          className="absolute w-full min-h-screen  mix-blend-overlay object-cover h-[90vh]"
+          className="absolute w-full min-h-screen  mix-blend-overlay object-top object-cover h-[90vh]"
           alt="background"
         />
         <div className="flex items-center justify-center h-screen">
@@ -54,15 +53,16 @@ export default function Home() {
         </div>
         <MdOutlineExpandCircleDown className="text-3xl font-bold mx-auto m-2 animate-bounce" />
       </main>
-      <div className=" bg-white container my-10">
+      <div className=" bg-white container my-10 scroll-mt-20" id="about">
         <div className="flex lg:flex-row flex-col items-center gap-4 my-10">
-          <div className="flex grow-0 flex-col justify-center gap-4 p-4 w-full lg:w-[40vw] py-6">
+          <div className="flex grow-0 flex-col justify-center gap-4 p-4 w-full lg:w-2/5 py-6">
             <h1 className="text-4xl font-thin">
-              THE SEARCH FOR YOUR REAL NATURE <br />{" "}
-              <span className="text-4xl font-bold">
-                IS THE GREATEST ADVENTURE YOU CAN IMAGINE
-              </span>
+              Welcome to Baarish & d'naina's dreamland
             </h1>
+            <h2 className="text-3xl font-bold">
+              Where culinary excellence meets luxurious stays in a breathtaking
+              lakeside setting.
+            </h2>
             <p className="text-md">
               Located close to the Dunes of the National Park and 250m from
               Praia Principal, Villa Praia is one of the 7 guesthouses of the La
@@ -76,7 +76,7 @@ export default function Home() {
               expectations.
             </p>
           </div>
-          <div className="flex w-full lg:w-[60vw] items-center justify-center m-10">
+          <div className="flex w-full lg:w-3/5 items-center justify-center m-10">
             <Carousel
               opts={{
                 align: "start",
@@ -84,17 +84,18 @@ export default function Home() {
               }}
               className="flex flex-col w-full p-4"
             >
-              <CarouselContent className="flex w-full md:w-[60vw]">
+              <CarouselContent className="flex w-full">
                 {picArray.map((p, index) => (
                   <CarouselItem
                     key={index}
-                    className="flex w-full md:w-[60vw] h-72 md:h-[50vw] relative"
+                    className="flex w-full h-96 md:h-[50vw] relative"
                   >
                     <Image
                       src={p}
                       alt="carousel"
                       fill
                       quality={100}
+                      loading="lazy"
                       className="object-cover bg-cover bg-center rounded-2xl"
                     />
                   </CarouselItem>
@@ -106,7 +107,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex relative flex-col items-center justify-center gap-6 py-4 text-center bg-[#7BC9FF] h-[70vh] overflow-hidden">
+      <div
+        className="flex relative flex-col items-center justify-center gap-6 py-4 text-center bg-[#7BC9FF] h-[70vh] overflow-hidden"
+        id="services"
+      >
         <div className="w-full flex flex-col md:flex-row justify-between items-center py-6">
           <h1 className="invisible ml-28">hello</h1>
           <h2 className="font-bold text-5xl md:pb-0 pb-10">
@@ -188,10 +192,10 @@ export default function Home() {
       </div>
       <div className="min-h-screen container  bg-white flex justify-center items-center relative">
         <div className="flex md:flex-row flex-col justify-center items-center gap-10">
-          <div className="w-[80vw] md:w-1/2 flex justify-end">
+          <div className="w-4/5 md:w-1/2 h-96 md:h-[600px] flex justify-end">
             <Image
               src={Restaurant}
-              className="rounded-lg"
+              className="rounded-lg object-cover"
               width={580}
               height={580}
               alt="restaurant"
@@ -199,16 +203,26 @@ export default function Home() {
           </div>
           <div className="w-[80vw] md:w-1/2 space-y-10">
             <div className=" flex flex-col gap-4">
-              <h2 className="text-3xl font-bold">Restaurant & Lounge</h2>
+              <div>
+                <h2 className="text-3xl font-bold">Baarish Restaurant</h2>
+                <h3 className="text-2xl font-semibold">
+                  {" "}
+                  Where Every Meal Tells a Story
+                </h3>
+              </div>
               <div className="w-full h-[2px] bg-black"></div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                nostrum, iste a voluptatem consectetur eveniet porro
-                repellendus. Tempora assumenda accusantium quia obcaecati modi
-                iste repudiandae reprehenderit animi, quo odio voluptatem ad
-                quod. Enim provident vitae repellendus aperiam delectus autem
-                deserunt, consequatur aspernatur officiis voluptatibus fuga ipsa
-                perspiciatis esse voluptatum unde!
+                Perched along the tranquil shores of the lake, Baarish
+                Restaurant invites you to experience dining at its finest. Our
+                signature private gazebos offer an intimate escape where you can
+                savor exquisite cuisine while embracing stunning waterfront
+                views. Whether you're celebrating a special occasion, planning a
+                romantic evening, or seeking a memorable dining experience, our
+                expert chefs and attentive staff create magic in every moment.
+                From intimate birthday celebrations to elegant ring ceremonies,
+                Baarish transforms ordinary moments into extraordinary memories,
+                all while you dine under the stars with the gentle whispers of
+                the lake as your companion.
               </p>
             </div>
             <Button>Discover More</Button>
