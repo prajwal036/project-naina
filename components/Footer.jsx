@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full p-10 md:p-16 text-white bg-[#1C1678]" id="contact">
+    <div className="w-full py-10 md:p-16 text-white bg-[#1C1678]" id="contact">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <Image

@@ -55,7 +55,7 @@ export default function Home() {
       </main>
       <div className=" bg-white container my-10 scroll-mt-20" id="about">
         <div className="flex lg:flex-row flex-col items-center gap-4 my-10">
-          <div className="flex grow-0 flex-col justify-center gap-4 p-4 w-full lg:w-2/5 py-6">
+          <div className="flex grow-0 flex-col justify-center gap-4 md:p-4 w-full lg:w-2/5 py-6">
             <h1 className="text-4xl font-thin">
               Welcome to Baarish & d'naina's dreamland
             </h1>
@@ -64,16 +64,19 @@ export default function Home() {
               lakeside setting.
             </h2>
             <p className="text-md">
-              Located close to the Dunes of the National Park and 250m from
-              Praia Principal, Villa Praia is one of the 7 guesthouses of the La
-              Villa Group and an excellent option for admiring the exuberant
-              nature of Jeri. In addition to an incredible view, with a swimming
-              pool and bar, it is ideal for watching the beautiful Jericoacoara
-              sunset. The Inn has 14 fully equipped accommodations, in addition
-              to all the exclusive services of the La Villa Group. Luxury lies
-              in the special attention given by the team to each guest, allowing
-              for personalized service. Our guesthouse will exceed all your
-              expectations.
+              Nestled by serene lake waters, our haven offers two extraordinary
+              experiences: dine in romantic private gazebos at Baarish
+              Restaurant where culinary artistry comes alive with spectacular
+              views, or escape to our French-inspired cottages at d'naina's
+              dreamland, where comfort meets sophistication. Each cottage
+              welcomes you with modern amenities including a private kitchen,
+              personal bartender, plush comfort room, and a balcony overlooking
+              the shimmering lake. Whether you're celebrating a special occasion
+              at our restaurant or seeking an adventure-filled getaway with
+              activities like kayaking and paragliding, we've crafted our rates
+              to make luxury accessible to all. Here, every moment becomes a
+              cherished memory without breaking the bank – because we believe
+              everyone deserves a taste of extraordinary living.
             </p>
           </div>
           <div className="flex w-full lg:w-3/5 items-center justify-center m-10">
@@ -108,17 +111,17 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="flex relative flex-col items-center justify-center gap-6 py-4 text-center bg-[#7BC9FF] h-[70vh] overflow-hidden"
+        className="flex relative flex-col items-center justify-center  px-4 gap-6 py-4 text-center bg-[#7BC9FF] md:h-[70vh] overflow-hidden"
         id="services"
       >
-        <div className="w-full flex flex-col md:flex-row justify-between items-center py-6">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center  py-6">
           <h1 className="invisible ml-28">hello</h1>
-          <h2 className="font-bold text-5xl md:pb-0 pb-10">
+          <h2 className="font-bold text-4xl md:text-5xl md:pb-0 pb-4">
             Our Core Priority
           </h2>
-          <Button className="md:mr-20">Know More</Button>
+          <Button className="md:mr-20 hidden md:block">Know More</Button>
         </div>
-        <div className=" w-full  container flex gap-6 text-black overflow-x-scroll ">
+        <div className=" w-full  container flex gap-6 text-black overflow-x-scroll overflow-y-hidden pb-4">
           <Card className=" min-w-[300px] bg-[#A3FFD6]">
             <CardHeader>
               <CardTitle className="flex justify-center">
@@ -137,7 +140,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card className=" min-w-[300px] bg-[#A3FFD6]">
+          <Card className="min-w-[300px] bg-[#A3FFD6]">
             <CardHeader>
               <CardTitle className="flex justify-center">
                 <div className="w-20 h-20 bg-black rounded-2xl flex justify-center items-center">
@@ -189,10 +192,11 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
+        <Button className=" md:hidden block w-full">Know More</Button>
       </div>
-      <div className="min-h-screen container  bg-white flex justify-center items-center relative">
+      <div className=" container  bg-white flex justify-center items-center relative my-20">
         <div className="flex md:flex-row flex-col justify-center items-center gap-10">
-          <div className="w-4/5 md:w-1/2 h-96 md:h-[600px] flex justify-end">
+          <div className="w-full md:w-1/2 h-96 md:h-[600px] flex justify-end">
             <Image
               src={Restaurant}
               className="rounded-lg object-cover"
@@ -230,12 +234,12 @@ export default function Home() {
         </div>
       </div>
       <div className="flex relative flex-col items-center justify-center gap-6 py-14 text-center bg-[#7BC9FF] overflow-hidden">
-        <div className="w-full flex flex-row justify-between items-center py-6 px-4">
-          <h1 className="invisible ml-28 hidden md:block"></h1>
-          <h2 className="font-bold text-2xl md:text-5xl md:pb-0 text-left">
+        <div className="container w-full flex flex-row justify-center md:justify-between items-center py-6 px-4">
+          <span className="md:w-24"></span>
+          <h2 className="font-bold text-4xl md:text-5xl md:pb-0 md:text-left">
             Our Rooms & Suites
           </h2>
-          <Button className="md:mr-20">View all</Button>
+          <Button className="hidden md:block">View all</Button>
         </div>
         <div className=" w-full  container flex gap-6 text-black overflow-x-scroll ">
           <Card className="min-w-[350px]  bg-[#A3FFD6] ">
