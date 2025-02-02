@@ -4,7 +4,7 @@ import Restaurant from "../public/img/img9.jpeg";
 import RoomOne from "../public/room1.jpg";
 import RoomTwo from "../public/room2.jpg";
 import RoomThree from "../public/room3.jpg";
-import Navbar from "../components/Navbar";
+import HeroParallax from "../components/ui/HeroParallax";
 import Link from "next/link";
 import { MdOutlineExpandCircleDown } from "react-icons/md";
 import {
@@ -26,12 +26,77 @@ import { BiSolidDoorOpen } from "react-icons/bi";
 import { FaRegSnowflake } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import { TbDiscount } from "react-icons/tb";
-
+import { AnimatedTestimonials } from "../components/ui/animated-testimonials";
 import Butterfly from "/components/Butterfly";
 import { Button } from "../components/ui/button";
+import SwiperJs from "../components/ui/swiper-js";
 
 export default function Home() {
   const picArray = ["/img/img2.jpeg", "/img/img3.jpeg", "/img/img4.jpeg"];
+  const testimonials = [
+    {
+      quote:
+        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      name: "Sarah Chen",
+      designation: "Product Manager at TechFlow",
+      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+      name: "Michael Rodriguez",
+      designation: "CTO at InnovateSphere",
+      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+      name: "Emily Watson",
+      designation: "Operations Director at CloudScale",
+      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      name: "James Kim",
+      designation: "Engineering Lead at DataPro",
+      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      name: "Lisa Thompson",
+      designation: "VP of Technology at FutureNet",
+      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
+  const products = [
+    {
+      title: "Introduction to JSON",
+      link: "https://example.com/json-guide",
+      thumbnail:
+        "https://images.pexels.com/photos/463734/pexels-photo-463734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    },
+    {
+      title: "Understanding APIs",
+      link: "https://example.com/api-tutorial",
+      thumbnail:
+        "https://images.pexels.com/photos/723177/pexels-photo-723177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    },
+    {
+      title: "JavaScript Basics",
+      link: "https://example.com/javascript-basics",
+      thumbnail:
+        "https://images.pexels.com/photos/2527556/pexels-photo-2527556.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+      title: "JavaScript Basics",
+      link: "https://example.com/javascript-basics",
+      thumbnail:
+        "https://images.pexels.com/photos/2527556/pexels-photo-2527556.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+  ];
+
   return (
     <>
       <main className="flex h-screen justify-between flex-col bg-gray-600 text-white relative">
@@ -79,6 +144,7 @@ export default function Home() {
               everyone deserves a taste of extraordinary living.
             </p>
           </div>
+
           <div className="flex w-full lg:w-3/5 items-center justify-center m-10">
             <Carousel
               opts={{
@@ -110,6 +176,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* <AnimatedTestimonials testimonials={testimonials} /> */}
+
       <div
         className="flex relative flex-col items-center justify-center  px-4 gap-6 py-4 text-center bg-[#7BC9FF] md:h-[70vh] overflow-hidden"
         id="services"
@@ -122,7 +191,7 @@ export default function Home() {
           <Button className="md:mr-20 hidden md:block">Know More</Button>
         </div>
         <div className=" w-full  container flex gap-6 text-black overflow-x-scroll overflow-y-hidden pb-4">
-          <Card className=" min-w-[300px] bg-[#A3FFD6]">
+          <Card className=" min-w-[300px]  bg-[#A3FFD6]">
             <CardHeader>
               <CardTitle className="flex justify-center">
                 <div className="w-20 h-20 bg-black rounded-2xl flex justify-center items-center">
@@ -237,12 +306,17 @@ export default function Home() {
         <div className="container w-full flex flex-row justify-center md:justify-between items-center py-6 px-4">
           <span className="md:w-24"></span>
           <h2 className="font-bold text-4xl md:text-5xl md:pb-0 md:text-left">
-            Our Rooms & Suites
+            Gallery
           </h2>
-          <Button className="hidden md:block">View all</Button>
+          <Link
+            href={"/gallery"}
+            className="hidden md:block py-2 px-6 bg-black hover:bg-black/80 duration-200 text-white rounded-lg"
+          >
+            View More
+          </Link>
         </div>
-        <div className=" w-full  container flex gap-6 text-black overflow-x-scroll ">
-          <Card className="min-w-[350px]  bg-[#A3FFD6] ">
+        <div className=" w-full  flex gap-6 text-black overflow-x-scroll md:pt-10 pb-10 md:pb-20">
+          {/* <Card className="min-w-[350px]  bg-[#A3FFD6] ">
             <CardHeader className="p-0 ">
               <CardTitle className="w-full flex justify-center">
                 <div className="w-full h-72  flex">
@@ -340,7 +414,8 @@ export default function Home() {
                 </button>
               </div>
             </CardFooter>
-          </Card>
+          </Card> */}
+          <SwiperJs />
         </div>
       </div>
     </>

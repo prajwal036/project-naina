@@ -47,7 +47,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="mailto:dreamland.naina@gmail.com"
+                href="tel:+918356801843"
                 className="flex gap-2 items-center"
               >
                 <IoCall className="w-8 h-8 bg-red-500 p-2 rounded-full" />
