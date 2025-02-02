@@ -14,7 +14,7 @@ const page = () => {
     "/img/gallery/gallery8.jpg",
     "/img/gallery/gallery9.jpg",
     "/img/gallery/gallery10.jpg",
-    "/img/gallery/gallery11.jpeg",
+    "/img/gallery/gallery11.jpg",
     "/img/gallery/gallery12.jpg",
   ];
   return (
