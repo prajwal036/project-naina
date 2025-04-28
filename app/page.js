@@ -1,10 +1,6 @@
 import Image from "next/image";
 import BackgroundImg from "/public/img/img1.jpeg";
 import Restaurant from "../public/img/img9.jpeg";
-import RoomOne from "../public/room1.jpg";
-import RoomTwo from "../public/room2.jpg";
-import RoomThree from "../public/room3.jpg";
-import HeroParallax from "../components/ui/HeroParallax";
 import Link from "next/link";
 import { MdOutlineExpandCircleDown } from "react-icons/md";
 import {
@@ -15,13 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../components/ui/carousel";
 import { BiSolidDoorOpen } from "react-icons/bi";
 import { FaRegSnowflake } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
@@ -30,6 +19,7 @@ import { AnimatedTestimonials } from "../components/ui/animated-testimonials";
 import Butterfly from "/components/Butterfly";
 import { Button } from "../components/ui/button";
 import SwiperJs from "../components/ui/swiper-js";
+import TinderSwiper from "../components/ui/tinder-swiper";
 
 export default function Home() {
   const picArray = ["/img/img2.jpeg", "/img/img3.jpeg", "/img/img4.jpeg"];
@@ -120,7 +110,7 @@ export default function Home() {
       </main>
       <div className=" bg-white container my-10 scroll-mt-20" id="about">
         <div className="flex lg:flex-row flex-col items-center gap-4 my-10">
-          <div className="flex grow-0 flex-col justify-center gap-4 md:p-4 w-full lg:w-2/5 py-6">
+          <div className="flex grow-0 flex-col justify-center gap-4 md:p-4 w-full lg:w-1/2 py-6">
             <h1 className="text-4xl font-thin">
               Welcome to Baarish & d'naina's dreamland
             </h1>
@@ -145,34 +135,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex w-full lg:w-3/5 items-center justify-center m-10">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="flex flex-col w-full p-4"
-            >
-              <CarouselContent className="flex w-full">
-                {picArray.map((p, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="flex w-full h-96 md:h-[50vw] relative"
-                  >
-                    <Image
-                      src={p}
-                      alt="carousel"
-                      fill
-                      quality={100}
-                      loading="lazy"
-                      className="object-cover bg-cover bg-center rounded-2xl"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+          <div className="w-full lg:w-1/2  py-10 px-6">
+            <TinderSwiper picArray={picArray} />
           </div>
         </div>
       </div>

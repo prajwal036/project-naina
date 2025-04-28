@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../public/BORCELLE.png";
+import Logo from "../public/naina-logo.png";
 import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -13,7 +13,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname.includes("gallery")) return setNavbarChange(true);
       if (window.scrollY >= 680) {
         setNavbarChange(true);
       } else {
@@ -30,13 +29,13 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[999] text-white shadow-xl  ${
+        className={`fixed top-0 left-0 right-0 z-[999] text-white shadow-xl backdrop-blur-sm ${
           navbarChange
             ? "bg-[#1C1678] text-black animate-in fade-in-10"
             : "animate-out fade-out-20 "
         }`}
       >
-        <div className="container flex justify-between items-center relative z-10">
+        <div className="container flex justify-between items-center relative z-[9999] ">
           <Link href={"/"}>
             <Image
               src={Logo}
@@ -74,7 +73,11 @@ export default function Navbar() {
             } `}
           >
             <li className="p-2 hover:scale-110 duration-200 cursor-pointer">
-              <Link href={"/"} onClick={() => setOpen(!open)}>
+              <Link
+                className="w-full"
+                href={"/"}
+                onClick={() => setOpen(!open)}
+              >
                 HOME
               </Link>
             </li>
