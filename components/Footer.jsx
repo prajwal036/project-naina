@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../public/BORCELLE.png";
+import Logo from "../public/naina-logo.png";
 import Image from "next/image";
 
 import { IoLocationSharp } from "react-icons/io5";
@@ -12,17 +12,10 @@ const Footer = () => {
   return (
     <div className="w-full py-10 md:p-16 text-white bg-[#1C1678]" id="contact">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-          <Image
-            src={Logo}
-            width={300}
-            height={300}
-            quality={100}
-            alt="logo"
-            className="rounded-md"
-          />
+        <div className="flex flex-col items-center">
+          <Image src={Logo} width={300} height={300} quality={100} alt="logo" />
         </div>
-        <div>
+        <div className="pt-5">
           <h4 className="font-semibold text-lg">Contact Us</h4>
           <ul className="space-y-4 mt-4">
             <li>
